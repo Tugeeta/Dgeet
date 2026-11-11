@@ -1,0 +1,6 @@
+{
+  "name": "CyberMission 1K - Cybersecurity Sprint & Countdown",
+  "description": "Step-by-step master plan, daily reminders, study tracker, and downloadable high-res lock screen countdown to crush your Cybersecurity Advanced Course deadline and win $1,000.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

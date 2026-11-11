@@ -1,0 +1,88 @@
+import { QuizCard } from '../types';
+
+export const CYBER_QUIZ_CARDS: QuizCard[] = [
+  {
+    id: 'q-1',
+    domain: 'SOC & SIEM',
+    question: 'Which Sysmon Event ID corresponds to "Process Creation", vital for detecting malicious PowerShell or CMD launches?',
+    options: ['Event ID 1', 'Event ID 3', 'Event ID 7', 'Event ID 10'],
+    correctIndex: 0,
+    explanation: 'Sysmon Event ID 1 logs Process Creation including command line arguments, parent process, hashes, and user context.',
+  },
+  {
+    id: 'q-2',
+    domain: 'Network Security',
+    question: 'In Wireshark, which display filter isolates DNS queries that returned a NXDOMAIN (Non-Existent Domain) response, often indicating DGA malware beaconing?',
+    options: [
+      'dns.flags.rcode == 3',
+      'dns.flags.response == 0',
+      'dns.qry.type == 1',
+      'ip.proto == 17 && dns.flags == 0x8180',
+    ],
+    correctIndex: 0,
+    explanation: 'dns.flags.rcode == 3 filters for NXDOMAIN (Name Error), commonly generated when malware cycles through dynamically generated domain names.',
+  },
+  {
+    id: 'q-3',
+    domain: 'Threat Hunting',
+    question: 'Under the MITRE ATT&CK framework, which tactic precedes "Execution"?',
+    options: ['Initial Access', 'Persistence', 'Privilege Escalation', 'Exfiltration'],
+    correctIndex: 0,
+    explanation: 'The initial flow in the MITRE ATT&CK matrix is Reconnaissance -> Resource Development -> Initial Access -> Execution.',
+  },
+  {
+    id: 'q-4',
+    domain: 'Incident Response',
+    question: 'According to the NIST SP 800-61 Incident Handling Lifecycle, what is the correct sequential order of phases?',
+    options: [
+      'Preparation -> Detection & Analysis -> Containment, Eradication, & Recovery -> Post-Incident Activity',
+      'Identification -> Containment -> Preparation -> Lessons Learned',
+      'Detection -> Eradication -> Containment -> Reporting',
+      'Analysis -> Mitigation -> Patching -> Auditing',
+    ],
+    correctIndex: 0,
+    explanation: 'NIST 800-61 defines: 1. Preparation, 2. Detection & Analysis, 3. Containment, Eradication & Recovery, 4. Post-Incident Activity (Lessons Learned).',
+  },
+  {
+    id: 'q-5',
+    domain: 'Cryptography',
+    question: 'Which symmetric encryption mode provides both confidentiality AND authenticated data integrity (AEAD)?',
+    options: ['AES-GCM', 'AES-CBC', 'AES-ECB', 'DES-EDE3'],
+    correctIndex: 0,
+    explanation: 'Galois/Counter Mode (GCM) provides Authenticated Encryption with Associated Data (AEAD), preventing tampering and bit-flipping attacks.',
+  },
+  {
+    id: 'q-6',
+    domain: 'IAM & Cloud',
+    question: 'In Kerberos authentication, what ticket is issued by the Authentication Server (AS) to the client upon initial credential verification?',
+    options: [
+      'Ticket Granting Ticket (TGT)',
+      'Service Ticket (ST)',
+      'Kerberos Session Master (KSM)',
+      'PAC Token',
+    ],
+    correctIndex: 0,
+    explanation: 'The AS issues a TGT encrypted with the Krbtgt account secret key, which the client presents to the Ticket Granting Service (TGS) to request Service Tickets.',
+  },
+  {
+    id: 'q-7',
+    domain: 'SOC & SIEM',
+    question: 'What is the primary indicator of Pass-the-Hash (PtH) attack in Windows Security Event logs?',
+    options: [
+      'Event ID 4624 with Logon Type 9 (NewCredentials) or Type 3 with NTLM authentication',
+      'Event ID 1102 (The audit log was cleared)',
+      'Event ID 4720 (A user account was created)',
+      'Event ID 4672 (Special privileges assigned)',
+    ],
+    correctIndex: 0,
+    explanation: 'Pass-the-Hash relies on NTLM authentication without Kerberos pre-auth, frequently logging Event ID 4624 with NTLM package and Logon Type 3 or 9.',
+  },
+  {
+    id: 'q-8',
+    domain: 'Network Security',
+    question: 'In Snort IDS syntax, which action keyword drops the packet and logs it immediately in inline IPS mode?',
+    options: ['drop', 'alert', 'pass', 'reject'],
+    correctIndex: 0,
+    explanation: 'The "drop" rule action discards the matching packet and logs the alert when Snort runs in inline IPS mode (`-Q`).',
+  },
+];
